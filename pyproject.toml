@@ -1,0 +1,16 @@
+[project]
+name = "projects-using-the-agno-library"
+version = "0.1.0"
+description = "Aqui, usaremos uma biblioteca leve chamada Agno para construir Agentes Multimodais"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "agno>=1.2.8",
+    "duckduckgo-search>=2025.4.4",
+    "openai>=1.70.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+]
