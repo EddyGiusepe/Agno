@@ -178,3 +178,4 @@ cython_debug/
 .env
 venv/
 tmp/
+CHATGPT_Granularity_clustering.pdf 
