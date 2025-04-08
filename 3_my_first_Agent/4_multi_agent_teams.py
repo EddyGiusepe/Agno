@@ -33,16 +33,22 @@ web_agent = Agent(
     instructions="Sempre incluir fontes",
     show_tool_calls=True,
     markdown=True,
+    debug_mode=True
 )
 
 finance_agent = Agent(
     name="Agente de Análise Financeira",
     role="Obter dados financeiros",
     model=OpenAIChat(id="o3-mini", api_key=OPENAI_API_KEY),
-    tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, company_info=True)],
+    tools=[YFinanceTools(stock_price=True,
+                         analyst_recommendations=False,
+                         company_info=False
+                        )
+          ],
     instructions="Usar tabelas para exibir dados",
     show_tool_calls=True,
     markdown=True,
+    debug_mode=True
 )
 
 agent_team = Agent(
@@ -51,6 +57,7 @@ agent_team = Agent(
     instructions=["Sempre incluir fontes", "Usar tabelas para exibir dados"],
     show_tool_calls=True,
     markdown=True,
+    debug_mode=True
 )
 
 agent_team.print_response("Qual é a visão do mercado e o desempenho financeiro das empresas de semicondutores de IA?", stream=True)
