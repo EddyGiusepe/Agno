@@ -54,7 +54,7 @@ agent = Agent(
             embedder=OpenAIEmbedder(id="text-embedding-3-small", api_key=OPENAI_API_KEY), # text-embedding-3-small     text-embedding-3-large
         ),
     ),
-    #tools=[DuckDuckGoTools()],
+    #tools=[DuckDuckGoTools()], # OBS: Se uso internet não traz o resultado esperado ou melhor dito não traz o conteúdo exato do meu PDF.
     #show_tool_calls=True,
     markdown=True
 )
