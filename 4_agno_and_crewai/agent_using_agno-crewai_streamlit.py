@@ -1,3 +1,6 @@
+"""
+Scritp baseado no tutorial de "Touseef Shaik"
+"""
 from agno.agent import Agent
 from agno.embedder.openai import OpenAIEmbedder
 from agno.embedder.ollama import OllamaEmbedder
