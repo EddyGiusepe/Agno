@@ -1,5 +1,17 @@
 """
+Senior Data Scientist.: Dr. Eddy Giusepe Chirinos Isidro
+
 Agente de notícias baseado no tutorial de "Touseef Shaik"
+
+Script: 5_news_agent.py
+=======================
+Este script cria um assistente de notícias que busca notícias 
+sobre um determinado assunto usando a busca do DuckDuckGo. Ele 
+também reescreve as notícias em artigos publicáveis.
+
+Run
+---
+streamlit run 5_news_agent.py
 """
 import asyncio
 import nest_asyncio
@@ -30,7 +42,7 @@ def get_news_articles(topic):
 
     # Realizar a busca do DuckDuckGo::
     ddg_api = DDGS()
-    results = ddg_api.text(f"{topic} {current_date}", max_results=5)
+    results = ddg_api.text(f"{topic} {current_date}", max_results=3)
 
     if results:
         news_results = "\n\n".join(
@@ -47,7 +59,11 @@ def get_news_articles(topic):
 # Criar um Agente de Notícias que busca as notícias:
 news_agent = Agent(
     name="Assistente de Notícias",
-    instructions="Você fornece as últimas notícias sobre um determinado assunto usando a busca do DuckDuckGo.",
+    instructions="""Você fornece as últimas notícias sobre um determinado assunto usando a busca do DuckDuckGo.
+                    As notícias devem ser em português brasileiro.
+                    As notícias devem ser as mais recentes possíveis.
+                    As notícias devem ser as mais relevantes possíveis.
+                    """,
     tools=[get_news_articles],
     model=model
 )
@@ -55,7 +71,9 @@ news_agent = Agent(
 # Criar um Agente Editor que reescreve as notícias em artigos publicáveis:
 editor_agent = Agent(
     name="Assistente de Edição",
-    instructions="Reescreva e me dê um artigo de notícias pronto para publicação. Cada história de notícias deve ser em uma seção separada.",
+    instructions="""Reescreva e me dê um artigo de notícias pronto para publicação. Cada história de notícias
+                    deve ser em uma seção separada (POR EXEMPLO: Política, Economia, Sociedade, Esportes, Cultura, etc.).
+                 """,
     model=model
 )
 
@@ -66,7 +84,7 @@ def run_news_workflow(topic):
     # Passo 1: Buscar notícias usando o agente de notícias:
     news_response = Runner.run_sync(
         news_agent,
-        f"Get me the news about {topic} on {current_date}"
+        f"Buscar as últimas notícias sobre {topic} em {current_date}"
     )
     raw_news = news_response.final_output
 
@@ -84,17 +102,17 @@ def run_news_workflow(topic):
 # Interface principal do Aplicativo Streamlit com uma IU aprimorada:
 def main():
     # Barra lateral para instruções e branding:
-    st.sidebar.title("Assistente de Notícias")
+    st.sidebar.title("👨‍💼 Assistente de Notícias 📰")
     st.sidebar.markdown(
         """
         **Bem-vindo ao Assistente de Notícias!**
 
         1. **Digite um assunto** no campo de entrada.
-        2. **Clique em 'Get News'** para buscar e editar as últimas notícias.
+        2. **Clique em 'Buscar Notícias'** para buscar e editar as últimas notícias.
         3. Divirta-se com seu artigo de notícias pronto para publicação!
         """
     )
-    st.sidebar.image("https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=400&q=80", caption="Stay Informed", use_container_width =True)
+    st.sidebar.image("https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80", caption="Mantenha-se Informado", use_container_width =True)
 
     # Estilo da página principal:
     st.markdown(
@@ -117,11 +135,11 @@ def main():
         unsafe_allow_html=True,
     )
 
-    st.markdown('<div class="main-title">News Assistant</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-title">Fetch and transform news for your favorite topics!</div>', unsafe_allow_html=True)
+    st.markdown('<div class="main-title">Assistente de notícias</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-title">Buscar e transformar notícias para seus assuntos favoritos!</div>', unsafe_allow_html=True)
 
     # Campo de entrada e botão:
-    topic = st.text_input("Digite um assunto para buscar notícias:", placeholder="e.g., AI, Climate Change, Space Exploration")
+    topic = st.text_input("Digite um assunto para buscar notícias:", placeholder="e.g., AI, Mudanças Climáticas, Exploração Espacial, etc.")
 
     if st.button("Buscar Notícias"):
         if topic:
