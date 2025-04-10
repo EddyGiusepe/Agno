@@ -82,8 +82,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "attrs"
 version = "25.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -93,7 +91,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> efcc53ae56da42988ab3b97fe2e09d749382ebdf
 name = "beautifulsoup4"
 version = "4.13.3"
 source = { registry = "https://pypi.org/simple" }
@@ -374,23 +371,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/59/08/7df7e90e34d08ad890bd71d7ba19451052f88dc3d2c483d228d1331a4736/griffe-1.7.2.tar.gz", hash = "sha256:98d396d803fab3b680c2608f300872fd57019ed82f0672f5b5323a9ad18c540c", size = 394919 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b1/5e/38b408f41064c9fcdbb0ea27c1bd13a1c8657c4846e04dab9f5ea770602c/griffe-1.7.2-py3-none-any.whl", hash = "sha256:1ed9c2e338a75741fc82083fe5a1bc89cb6142efe126194cc313e34ee6af5423", size = 129187 },
-]
-
-[[package]]
-name = "groq"
-version = "0.22.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "anyio" },
-    { name = "distro" },
-    { name = "httpx" },
-    { name = "pydantic" },
-    { name = "sniffio" },
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/fd/59/7e03f5b12c097b7af48d5fe847a5bd00c90ccfc04b801c2ae68a043ddf1e/groq-0.22.0.tar.gz", hash = "sha256:9d090fbe4a051655faff649890d18aaacb3121393ad9d55399171fe081f1057b", size = 122956 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/70/77/e6b60636f648922cc53144c36e1e7b77c9670539aab9e8b84a5fd1a53880/groq-0.22.0-py3-none-any.whl", hash = "sha256:f53d3966dff713aaa635671c2d075ebb932b0d48e3c4031ede9b84a2a6694c79", size = 126685 },
 ]
 
 [[package]]
@@ -1027,7 +1007,6 @@ source = { virtual = "." }
 dependencies = [
     { name = "agno" },
     { name = "duckduckgo-search" },
-    { name = "groq" },
     { name = "ipykernel" },
     { name = "ipywidgets" },
     { name = "lancedb" },
@@ -1040,11 +1019,8 @@ dependencies = [
     { name = "pgvector" },
     { name = "psycopg" },
     { name = "pypdf" },
-<<<<<<< HEAD
-=======
     { name = "sqlalchemy" },
     { name = "streamlit" },
->>>>>>> efcc53ae56da42988ab3b97fe2e09d749382ebdf
     { name = "yfinance" },
 ]
 
@@ -1055,14 +1031,8 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-<<<<<<< HEAD
     { name = "agno", specifier = ">=1.2.8" },
     { name = "duckduckgo-search", specifier = "==8.0.0" },
-=======
-    { name = "agno", specifier = "==1.2.15" },
-    { name = "duckduckgo-search", specifier = ">=8.0.0" },
-    { name = "groq", specifier = ">=0.22.0" },
->>>>>>> efcc53ae56da42988ab3b97fe2e09d749382ebdf
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "ipywidgets", specifier = ">=8.1.5" },
     { name = "lancedb", specifier = ">=0.21.2" },
@@ -1075,13 +1045,9 @@ requires-dist = [
     { name = "pgvector", specifier = ">=0.4.0" },
     { name = "psycopg", specifier = ">=3.2.6" },
     { name = "pypdf", specifier = ">=5.4.0" },
-<<<<<<< HEAD
-    { name = "yfinance", specifier = "==0.2.55" },
-=======
     { name = "sqlalchemy", specifier = ">=2.0.40" },
     { name = "streamlit", specifier = ">=1.44.1" },
     { name = "yfinance", specifier = ">=0.2.55" },
->>>>>>> efcc53ae56da42988ab3b97fe2e09d749382ebdf
 ]
 
 [package.metadata.requires-dev]
@@ -1372,8 +1338,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "referencing"
 version = "0.36.2"
 source = { registry = "https://pypi.org/simple" }
@@ -1387,7 +1351,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> efcc53ae56da42988ab3b97fe2e09d749382ebdf
 name = "requests"
 version = "2.32.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1495,8 +1458,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "sqlalchemy"
 version = "2.0.40"
 source = { registry = "https://pypi.org/simple" }
@@ -1531,7 +1492,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> efcc53ae56da42988ab3b97fe2e09d749382ebdf
 name = "stack-data"
 version = "0.6.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1729,8 +1689,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "uvicorn"
 version = "0.34.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1762,7 +1720,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> efcc53ae56da42988ab3b97fe2e09d749382ebdf
 name = "wcwidth"
 version = "0.2.13"
 source = { registry = "https://pypi.org/simple" }
