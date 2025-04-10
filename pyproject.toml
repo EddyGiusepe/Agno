@@ -10,11 +10,18 @@ dependencies = [
     "ipykernel>=6.29.5",
     "ipywidgets>=8.1.5",
     "lancedb>=0.21.2",
+    "nest-asyncio>=1.6.0",
     "numpy>=2.2.4",
+    "ollama>=0.4.7",
     "openai>=1.70.0",
+    "openai-agents>=0.0.9",
     "pandas>=2.2.3",
+    "pgvector>=0.4.0",
+    "psycopg>=3.2.6",
     "pypdf>=5.4.0",
-    "yfinance==0.2.55",
+    "sqlalchemy>=2.0.40",
+    "streamlit>=1.44.1",
+    "yfinance>=0.2.55",
 ]
 
 [dependency-groups]
