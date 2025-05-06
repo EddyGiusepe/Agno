@@ -7,3 +7,4 @@ from dotenv import load_dotenv, find_dotenv
 
 _ = load_dotenv(find_dotenv())  # read local .env file
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
