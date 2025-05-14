@@ -4,10 +4,9 @@ Senior Data Scientist.: Dr. Eddy Giusepe Chirinos Isidro
 
 Script audio_input_output.py
 ============================
-Este script usa o modelo GPT-4o-audio-preview para processar 
-um arquivo de áudio. 
+Este script usa o modelo GPT-4o-audio-preview para processar
+um arquivo de áudio.
 """
-import base64
 import os
 import requests
 from agno.agent import Agent
@@ -23,10 +22,11 @@ wav_data = response.content
 
 agent = Agent(
     model=OpenAIChat(
+        api_key=os.getenv("OPENAI_API_KEY"),
         id="gpt-4o-audio-preview",
         modalities=["text", "audio"],
         audio={"voice": "sage", "format": "wav"},
-        #max_tokens=800, # Limite seus tokens, já que é caro usar modelos de audio.
+        # max_tokens=800, # Limite seus tokens, já que é caro usar modelos de audio.
     ),
     markdown=True,
 )
