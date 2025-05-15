@@ -16,6 +16,7 @@ from agno.utils.audio import write_audio_to_file
 
 # Obtenha o arquivo de áudio e converta-o em uma string codificada em base64:
 url = "https://openaiassets.blob.core.windows.net/$web/API/docs/audio/alloy.wav"
+#url="https://agno-public.s3.amazonaws.com/demo_data/sample_conversation.wav"    # Usar ele para traduzir para pt-br
 response = requests.get(url)
 response.raise_for_status()
 wav_data = response.content
