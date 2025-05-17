@@ -185,4 +185,8 @@ relatorio_nvidia_finance.md
 6_extracting_information_from_Word_documents/
 =======
 sentiment_analysis_audio.md
+<<<<<<< HEAD
 >>>>>>> 51ca0dc (Meu gitignore)
+=======
+comandos_DB_postgres.md
+>>>>>>> 4690a0a (gitignore)
