@@ -4,7 +4,7 @@ requires-python = ">=3.13"
 
 [[package]]
 name = "agno"
-version = "1.2.15"
+version = "1.5.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "docstring-parser" },
@@ -20,9 +20,9 @@ dependencies = [
     { name = "typer" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2d/e6/5f747db61e35500750b9f595e8836649bd0d7a22ed0c2ec41167e5dec8bc/agno-1.2.15.tar.gz", hash = "sha256:b589d1277c756e5d8ed5c5ad2052d7910e1c2ad007fa3c830a4e8332809f2099", size = 467123 }
+sdist = { url = "https://files.pythonhosted.org/packages/78/81/8e915bf8a54202c019aa01e3cc5b3db723dd9b00db3fdab5b86b9739cdcb/agno-1.5.6.tar.gz", hash = "sha256:169404b5ab6cd683e4f8ab1d95ab76eff627121d5aa736ef91c32962d42ea436", size = 605177 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/27/4b/05c42f236c18d11b29af368910df398a8a67e4f5c5681ead30ebde07a548/agno-1.2.15-py3-none-any.whl", hash = "sha256:e82b57f2980bff1ce7574a16ed963485f2efa3519e9322e17fa6ba07719bd5e2", size = 616626 },
+    { url = "https://files.pythonhosted.org/packages/21/33/070220d86051d53fb8e0bd5559ca5874cfef3eb4a4fca1073a82dd058e15/agno-1.5.6-py3-none-any.whl", hash = "sha256:36c48f3f69e287b6a78745280abd5a28530abedf8755f22eed95499451bc82f4", size = 802829 },
 ]
 
 [[package]]
@@ -1109,11 +1109,13 @@ dependencies = [
     { name = "pandas" },
     { name = "pgvector" },
     { name = "psycopg" },
+    { name = "pylance" },
     { name = "pymupdf" },
     { name = "pypdf" },
     { name = "python-dotenv" },
     { name = "sqlalchemy" },
     { name = "streamlit" },
+    { name = "tantivy" },
     { name = "yfinance" },
 ]
 
@@ -1124,7 +1126,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "agno", specifier = ">=1.2.8" },
+    { name = "agno", specifier = ">=1.5.6" },
     { name = "anthropic", specifier = ">=0.50.0" },
     { name = "black", specifier = ">=25.1.0" },
     { name = "docx2pdf", specifier = ">=0.1.8" },
@@ -1142,11 +1144,13 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "pgvector", specifier = ">=0.4.0" },
     { name = "psycopg", specifier = ">=3.2.6" },
+    { name = "pylance", specifier = ">=0.28.0" },
     { name = "pymupdf", specifier = ">=1.25.5" },
     { name = "pypdf", specifier = ">=5.4.0" },
     { name = "python-dotenv", specifier = ">=1.1.0" },
     { name = "sqlalchemy", specifier = ">=2.0.40" },
     { name = "streamlit", specifier = ">=1.44.1" },
+    { name = "tantivy", specifier = ">=0.24.0" },
     { name = "yfinance", specifier = ">=0.2.55" },
 ]
 
@@ -1330,6 +1334,24 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz", hash = "sha256:61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f", size = 4968581 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8a/0b/9fcc47d19c48b59121088dd6da2488a49d5f72dacf8262e2790a1d2c7d15/pygments-2.19.1-py3-none-any.whl", hash = "sha256:9ea1544ad55cecf4b8242fab6dd35a93bbce657034b0611ee383099054ab6d8c", size = 1225293 },
+]
+
+[[package]]
+name = "pylance"
+version = "0.28.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pyarrow" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bb/fb/506a74ff0d4ffa365c02e53c57f3021aea5f0f6d3aa1a5a6984ad8648720/pylance-0.28.0-cp39-abi3-macosx_10_15_x86_64.whl", hash = "sha256:7870ac8fd803f7df0a3b2c20b6a9bdba288a9d823d0132e4297fe7f17ab6d380", size = 34808656 },
+    { url = "https://files.pythonhosted.org/packages/51/a2/f1ac9e756379def15c2bbc4290ae53744a15c4182283a6f6466ddad4b3df/pylance-0.28.0-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:e5d7de3978869408eb3dc3cd9b0ee37602014dd24bd049968717e4972468568d", size = 31863186 },
+    { url = "https://files.pythonhosted.org/packages/70/43/7d4cdaef27a2141bd2457c091fb73ba54e3618abdc0600e9eb884f80e028/pylance-0.28.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:44c96e7a38140c2c463c1bd6f1551345bf7cab43ca4b802f65ede762e1aa96e8", size = 33659700 },
+    { url = "https://files.pythonhosted.org/packages/44/55/bd75b11e21eae41baee611eabfda1bc94a78ffea2698804abc5b7d78d865/pylance-0.28.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:271e9faca4951e9092c0454cc84e5d403e888deebb4f55c34be952947d5d6e0e", size = 36549703 },
+    { url = "https://files.pythonhosted.org/packages/03/7c/5a66122cfb5e32b1f7867a5f1122b0c0268a86f53c8a3d902185f754658c/pylance-0.28.0-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:62b96936b94148e9856d1821133d91d36420d62336bf8ce60aee91068a33d5ab", size = 33682570 },
+    { url = "https://files.pythonhosted.org/packages/25/f2/b672f317af049afea4902007c7b56c8858543f7559ac51c8708cc77a2ca8/pylance-0.28.0-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:0987ebc1f4f712a08450f2decaef04be45847770f220c846687fc68629aec25d", size = 36468100 },
+    { url = "https://files.pythonhosted.org/packages/fd/da/d7f968326e952530dd1d354e5926fd8bbd9d31745c316862792d40a8791f/pylance-0.28.0-cp39-abi3-win_amd64.whl", hash = "sha256:e013aecf90437a520101af6d4a03fca4e1e712ef744b59549670d5b267a2fbd2", size = 37696387 },
 ]
 
 [[package]]
@@ -1659,6 +1681,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/3e/c0/7286284567e5045f0c587c426d0c41aee5d10c0a2e360e627a83037e9f0c/streamlit-1.44.1.tar.gz", hash = "sha256:c6914ed6d5b76870b461510476806db370f36425ae0e6654d227c988288198d3", size = 9423685 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/17/fc425e1d4d86e31b2aaf0812a2ef2163763a0670d671720c7c36e8679323/streamlit-1.44.1-py3-none-any.whl", hash = "sha256:9fe355f58b11f4eb71e74f115ce1f38c4c9eaff2733e6bcffb510ac1298a5990", size = 9812242 },
+]
+
+[[package]]
+name = "tantivy"
+version = "0.24.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ac/0b/e0ed45e9e2cd8dc09b4ec1a1a99cb4148dfc81a628d0c6fc9ecfe778e5e2/tantivy-0.24.0.tar.gz", hash = "sha256:70085830512501dc8104f4d7ae68c7b8f7a2c1d489fbfc6fe411184d5803710a", size = 70820 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/dc/92/5da712d452a96f1391fb87c08eab7808aeb741d229c4d7fe87f1a5d52674/tantivy-0.24.0-cp313-cp313-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:476752ba60b48f95c5182cdfd115491671b188d672f7af480189e27249a208ff", size = 7346061 },
+    { url = "https://files.pythonhosted.org/packages/1e/94/23fa66025c83abbfb33e6e6307eda37b5a1d74ab942d2f29bbb1b0379482/tantivy-0.24.0-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:3f474b8a18ababaddb930548e816ac9ed78fa1f24ab103b7befebd004c5124b1", size = 3798744 },
+    { url = "https://files.pythonhosted.org/packages/37/c2/43e41c756ab112a305a6051a8ea7771e58130117267302ac9ab51c8ee0a5/tantivy-0.24.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b18cc68b0cf8eb5c45935e225f2114252551ee9993799d5745f84dbd3adf8856", size = 4013858 },
+    { url = "https://files.pythonhosted.org/packages/ec/1b/35f07112b8c12e0ecf1795e48a81647a4bbd2bd3222c7aba070467cc9013/tantivy-0.24.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:05ba05214eb1e935a3bff8dfd10af39c77fa4f1390ddb768b377b660e7eacdae", size = 4145635 },
+    { url = "https://files.pythonhosted.org/packages/90/8d/a235a6a1cb0e7dd54c5c7c8a58f64b41e5fc40261e22405ff200260be175/tantivy-0.24.0-cp313-none-win_amd64.whl", hash = "sha256:9191e256b466f45ab2db6001853a6194407a66ffd575751632ab2d9ed8558a65", size = 3233468 },
 ]
 
 [[package]]
