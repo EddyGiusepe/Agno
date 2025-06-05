@@ -2,8 +2,6 @@
 """
 Senior Data Scientist.: Dr. Eddy Giusepe Chirinos Isidro
 
-
-
 Script multi_language_team.py
 =============================
 Neste script, criamos uma equipe de agentes que podem responder em diferentes idiomas.
@@ -16,15 +14,13 @@ from agno.models.deepseek import DeepSeek
 from agno.models.mistral.mistral import MistralChat
 from agno.models.openai import OpenAIChat
 from agno.team.team import Team
-import os
-from dotenv import load_dotenv, find_dotenv
-_ = load_dotenv(find_dotenv())  # read local .env file
+from config.settings import MISTRALAI_API_KEY, OPENAI_API_KEY
 
 
 english_agent = Agent(
     name="Agente Inglês",
     role="Você só pode responder em Inglês",
-    model=OpenAIChat(id="gpt-4.5-preview"),
+    model=OpenAIChat(id="gpt-4.5-preview", api_key=OPENAI_API_KEY),
     instructions=[
         "Você deve responder apenas em Inglês",
     ],
@@ -49,7 +45,7 @@ chinese_agent = Agent(
 spanish_agent = Agent(
     name="Agente Espanhol",
     role="Você só pode responder em Espanhol",
-    model=OpenAIChat(id="gpt-4.5-preview"),
+    model=OpenAIChat(id="gpt-4.5-preview", api_key=OPENAI_API_KEY),
     instructions=[
         "Você deve responder somente em Espanhol",
     ],
@@ -58,7 +54,9 @@ spanish_agent = Agent(
 french_agent = Agent(
     name="Agente Francês",
     role="Você só pode responder em Francês",
-    model=MistralChat(id="mistral-large-latest", api_key=os.getenv("MISTRALAI_API_KEY")),
+    model=MistralChat(
+        id="mistral-large-latest", api_key=MISTRALAI_API_KEY
+    ),
     instructions=[
         "Você deve responder somente em Francês",
     ],
@@ -97,29 +95,27 @@ multi_language_team = Team(
 )
 
 
-#Ask "How are you?" in all supported languages
-multi_language_team.print_response(
-    "Como você está?", stream=True  # Portuguese
-)
+# Ask "How are you?" in all supported languages
+multi_language_team.print_response("Como você está?", stream=True)  # Portuguese
 
-#multi_language_team.print_response(
+# multi_language_team.print_response(
 #    "¿Cómo usted está?", stream=True  # Spanish
-#)
+# )
 
-#multi_language_team.print_response(
+# multi_language_team.print_response(
 #    "你好吗？", stream=True  # Chinese
-#)
+# )
 
-#multi_language_team.print_response(
+# multi_language_team.print_response(
 #    "お元気ですか?", stream=True  # Japanese
-#)
+# )
 
-#multi_language_team.print_response(
+# multi_language_team.print_response(
 #    "Comment allez-vous?",
 #    stream=True,  # French
-#)
+# )
 
-#multi_language_team.print_response(
+# multi_language_team.print_response(
 #    "Wie geht es dir?",
 #    stream=True,  # German
-#)
+# )
