@@ -355,6 +355,15 @@ wheels = [
 ]
 
 [[package]]
+name = "eval-type-backport"
+version = "0.2.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/ea/8b0ac4469d4c347c6a385ff09dc3c048c2d021696664e26c7ee6791631b5/eval_type_backport-0.2.2.tar.gz", hash = "sha256:f0576b4cf01ebb5bd358d02314d31846af5e07678387486e2c798af0e7d849c1", size = 9079 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ce/31/55cd413eaccd39125368be33c46de24a1f639f2e12349b0361b4678f3915/eval_type_backport-0.2.2-py3-none-any.whl", hash = "sha256:cb6ad7c393517f476f96d456d0412ea80f0a8cf96f6892834cd9340149111b0a", size = 5830 },
+]
+
+[[package]]
 name = "executing"
 version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -803,6 +812,22 @@ wheels = [
 ]
 
 [[package]]
+name = "mistralai"
+version = "1.8.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "eval-type-backport" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "python-dateutil" },
+    { name = "typing-inspection" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/23/c1/b3cecb41695fd6cb5483fbb8ecaceb5586346c3ed53a78808d10c1b537c4/mistralai-1.8.1.tar.gz", hash = "sha256:b967ca443726b71ec45632cb33825ee2e55239a652e73c2bda11f7cc683bf6e5", size = 175819 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b0/14/e9ef675928768f508dfcedbb0e0ed601784a6911620a2bc25c9065921420/mistralai-1.8.1-py3-none-any.whl", hash = "sha256:badfc7e6832d894b3e9071d92ad621212b7cccd7df622c6cacdb525162ae338f", size = 373197 },
+]
+
+[[package]]
 name = "multitasking"
 version = "0.0.11"
 source = { registry = "https://pypi.org/simple" }
@@ -1075,6 +1100,7 @@ dependencies = [
     { name = "ipykernel" },
     { name = "ipywidgets" },
     { name = "lancedb" },
+    { name = "mistralai" },
     { name = "nest-asyncio" },
     { name = "numpy" },
     { name = "ollama" },
@@ -1085,6 +1111,7 @@ dependencies = [
     { name = "psycopg" },
     { name = "pymupdf" },
     { name = "pypdf" },
+    { name = "python-dotenv" },
     { name = "sqlalchemy" },
     { name = "streamlit" },
     { name = "yfinance" },
@@ -1106,6 +1133,7 @@ requires-dist = [
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "ipywidgets", specifier = ">=8.1.5" },
     { name = "lancedb", specifier = ">=0.21.2" },
+    { name = "mistralai", specifier = ">=1.8.1" },
     { name = "nest-asyncio", specifier = ">=1.6.0" },
     { name = "numpy", specifier = ">=2.2.4" },
     { name = "ollama", specifier = ">=0.4.7" },
@@ -1116,6 +1144,7 @@ requires-dist = [
     { name = "psycopg", specifier = ">=3.2.6" },
     { name = "pymupdf", specifier = ">=1.25.5" },
     { name = "pypdf", specifier = ">=5.4.0" },
+    { name = "python-dotenv", specifier = ">=1.1.0" },
     { name = "sqlalchemy", specifier = ">=2.0.40" },
     { name = "streamlit", specifier = ">=1.44.1" },
     { name = "yfinance", specifier = ">=0.2.55" },
