@@ -1156,6 +1156,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "agno" },
     { name = "anthropic" },
+    { name = "beautifulsoup4" },
     { name = "black" },
     { name = "docx2pdf" },
     { name = "duckdb" },
@@ -1163,6 +1164,7 @@ dependencies = [
     { name = "exa-py" },
     { name = "fastapi" },
     { name = "google-genai" },
+    { name = "httpx" },
     { name = "ipykernel" },
     { name = "ipywidgets" },
     { name = "lancedb" },
@@ -1194,6 +1196,7 @@ dev = [
 requires-dist = [
     { name = "agno", specifier = ">=1.5.6" },
     { name = "anthropic", specifier = ">=0.50.0" },
+    { name = "beautifulsoup4", specifier = ">=4.13.3" },
     { name = "black", specifier = ">=25.1.0" },
     { name = "docx2pdf", specifier = ">=0.1.8" },
     { name = "duckdb", specifier = ">=1.2.2" },
@@ -1201,6 +1204,7 @@ requires-dist = [
     { name = "exa-py", specifier = ">=1.14.12" },
     { name = "fastapi", specifier = ">=0.115.13" },
     { name = "google-genai", specifier = ">=1.21.1" },
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "ipywidgets", specifier = ">=8.1.5" },
     { name = "lancedb", specifier = ">=0.21.2" },
