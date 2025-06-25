@@ -11,6 +11,8 @@ dependencies = [
     "docx2pdf>=0.1.8",
     "duckdb>=1.2.2",
     "duckduckgo-search==8.0.0",
+    "exa-py>=1.14.12",
+    "fastapi>=0.115.13",
     "ipykernel>=6.29.5",
     "ipywidgets>=8.1.5",
     "lancedb>=0.21.2",

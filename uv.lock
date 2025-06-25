@@ -364,12 +364,42 @@ wheels = [
 ]
 
 [[package]]
+name = "exa-py"
+version = "1.14.12"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "openai" },
+    { name = "pydantic" },
+    { name = "requests" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e6/5b/971dc8f1c73fd13def3bbb881a586100c45d472d6cd587c1765166d64478/exa_py-1.14.12.tar.gz", hash = "sha256:0cd18a62d099484ab0f125da4ff211a96d2da8cf380916e2ba3ddc1ee2e87195", size = 45519 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c1/f0/3513526d1e9346abed229f395b3b11e8dd93d235035287eef2d26311a2f8/exa_py-1.14.12-py3-none-any.whl", hash = "sha256:10308bab3e24c0ea7812bb1d6d7b9062ed84dfce9b5cb46b8873e23e0e779a07", size = 41655 },
+]
+
+[[package]]
 name = "executing"
 version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/91/50/a9d80c47ff289c611ff12e63f7c5d13942c65d68125160cefd768c73e6e4/executing-2.2.0.tar.gz", hash = "sha256:5d108c028108fe2551d1a7b2e8b713341e2cb4fc0aa7dcf966fa4327a5226755", size = 978693 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7b/8f/c4d9bafc34ad7ad5d8dc16dd1347ee0e507a52c3adb6bfa8887e1c6a26ba/executing-2.2.0-py2.py3-none-any.whl", hash = "sha256:11387150cad388d62750327a53d3339fad4888b39a6fe233c3afbb54ecffd3aa", size = 26702 },
+]
+
+[[package]]
+name = "fastapi"
+version = "0.115.13"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "starlette" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/20/64/ec0788201b5554e2a87c49af26b77a4d132f807a0fa9675257ac92c6aa0e/fastapi-0.115.13.tar.gz", hash = "sha256:55d1d25c2e1e0a0a50aceb1c8705cd932def273c102bff0b1c1da88b3c6eb307", size = 295680 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/59/4a/e17764385382062b0edbb35a26b7cf76d71e27e456546277a42ba6545c6e/fastapi-0.115.13-py3-none-any.whl", hash = "sha256:0a0cab59afa7bab22f5eb347f8c9864b681558c278395e94035a741fc10cd865", size = 95315 },
 ]
 
 [[package]]
@@ -1097,6 +1127,8 @@ dependencies = [
     { name = "docx2pdf" },
     { name = "duckdb" },
     { name = "duckduckgo-search" },
+    { name = "exa-py" },
+    { name = "fastapi" },
     { name = "ipykernel" },
     { name = "ipywidgets" },
     { name = "lancedb" },
@@ -1132,6 +1164,8 @@ requires-dist = [
     { name = "docx2pdf", specifier = ">=0.1.8" },
     { name = "duckdb", specifier = ">=1.2.2" },
     { name = "duckduckgo-search", specifier = "==8.0.0" },
+    { name = "exa-py", specifier = ">=1.14.12" },
+    { name = "fastapi", specifier = ">=0.115.13" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "ipywidgets", specifier = ">=8.1.5" },
     { name = "lancedb", specifier = ">=0.21.2" },
