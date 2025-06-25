@@ -9,3 +9,4 @@ _ = load_dotenv(find_dotenv())  # read local .env file
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 MISTRALAI_API_KEY = os.environ["MISTRALAI_API_KEY"]
+EXA_API_KEY = os.environ["EXA_API_KEY"]
