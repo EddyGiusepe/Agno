@@ -186,3 +186,4 @@ sentiment_analysis_audio.md
 comandos_DB_postgres.md
 7_RAG_with_Agents_and_route/
 tmp/
+agent_sessions.db
