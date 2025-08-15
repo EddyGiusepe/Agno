@@ -29,8 +29,9 @@ sys.path.append(
 )
 from config.settings import OPENAI_API_KEY, MCP_SERVER_URL
 
-#mcp_server_url = os.getenv("MCP_SERVER_URL")
+# mcp_server_url = os.getenv("MCP_SERVER_URL")
 mcp_server_url = MCP_SERVER_URL
+
 
 async def run_agent(task: str) -> None:
     try:
@@ -61,12 +62,12 @@ async def run_interactive_agent() -> None:
                 markdown=True,
             )
             print("Modo interativo com Slack iniciado. Digite 'sair' para encerrar.")
-            
+
             while True:
                 user_input = input("\nDigite sua instrução para o Slack: ")
                 if user_input.lower() == "sair":
                     break
-                
+
                 await agent.aprint_response(
                     message=user_input,
                     stream=True,
@@ -80,9 +81,9 @@ if __name__ == "__main__":
     asyncio.run(run_agent("Mostre-me a última mensagem no canal #comunidade"))
 
     # Use seu nome real do Slack para isso funcionar!
-    #asyncio.run(
+    # asyncio.run(
     #    run_agent("Envie uma mensagem para <EddyGiusepe> dizendo 'Olá, eu sou seu Agno Agent!'")
-    #)
+    # )
 
     # Use o modo interativo:
-    #asyncio.run(run_interactive_agent())
+    # asyncio.run(run_interactive_agent())
