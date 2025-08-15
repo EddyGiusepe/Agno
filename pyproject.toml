@@ -5,7 +5,7 @@ description = "Aqui, usaremos uma biblioteca leve chamada Agno para construir Ag
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "agno>=1.5.6",
+    "agno>=1.7.11",
     "anthropic==0.55.0",
     "beautifulsoup4>=4.13.3",
     "black>=25.1.0",
@@ -30,6 +30,7 @@ dependencies = [
     "pgvector>=0.4.0",
     "psycopg>=3.2.6",
     "pylance>=0.28.0",
+    "pymongo[srv]>=4.13.2",
     "pymupdf>=1.25.5",
     "pypdf>=5.4.0",
     "python-dotenv>=1.1.0",
