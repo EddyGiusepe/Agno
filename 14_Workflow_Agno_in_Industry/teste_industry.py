@@ -8,7 +8,6 @@ from agno.tools import tool
 from agno.workflow.v2 import Workflow, Step, Condition, Parallel
 from agno.storage.sqlite import SqliteStorage
 from datetime import datetime
-import json
 
 import sys
 import os
@@ -114,7 +113,7 @@ def precisa_manutencao(step_input) -> bool:
         # Analisa resultado do monitoramento
         content = step_input.previous_step_content
         return "alerta" in content.lower() or "problema" in content.lower()
-    except:
+    except (AttributeError, TypeError):
         return False
 
 def qualidade_aprovada(step_input) -> bool:
@@ -122,7 +121,7 @@ def qualidade_aprovada(step_input) -> bool:
     try:
         content = step_input.previous_step_content
         return "aprovado" in content.lower()
-    except:
+    except (AttributeError, TypeError):
         return False
 
 # 4. WORKFLOW INDUSTRIAL COMPLETO
