@@ -187,3 +187,4 @@ comandos_DB_postgres.md
 7_RAG_with_Agents_and_route/
 tmp/
 agent_sessions.db
+my_agent_os.db
