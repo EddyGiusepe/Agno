@@ -33,6 +33,7 @@ dependencies = [
     "pandas>=2.2.3",
     "pgvector>=0.4.0",
     "psycopg>=3.2.6",
+    "pydantic==2.12.5",
     "pylance>=0.28.0",
     "pymongo[srv]>=4.13.2",
     "pymupdf>=1.25.5",
