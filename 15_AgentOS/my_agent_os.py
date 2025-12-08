@@ -76,8 +76,8 @@ class AgentOSManager(BaseModel):
     db_file: str = Field(default="my_agent_os.db", description="SQLite database file")
     instructions: list[str] = Field(
         default=[
-            "Você é um assistente de IA que responde educadamente, gentil e factualmente ao usuário.",
-            "Sempre responda in the language of the user and at the end always add an emoji.",
+            "You are an AI assistant that responds educatively, kindly and factually to the user.",
+            "Always respond in the language of the user and at the end always add an emoji.",
         ],
         description="Agent behavior instructions",
     )
