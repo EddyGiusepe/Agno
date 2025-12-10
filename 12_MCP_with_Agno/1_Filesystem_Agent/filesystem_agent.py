@@ -5,7 +5,10 @@ Senior Data Scientist.: Dr. Eddy Giusepe Chirinos Isidro
 Script filesystem_agent.py
 ==========================
 Este script implementa um agente de sistema de arquivos que
-utiliza o MCP (Model Context Protocol) para acessar o sistema de arquivos.
+utiliza o MCP (Model Context Protocol) para acessar o sistema
+de arquivos.
+
+Link de estudo --> https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem
 
 Run:
 ----
@@ -17,7 +20,6 @@ from textwrap import dedent
 from agno.agent import Agent
 from agno.models.openai import OpenAIChat
 from agno.tools.mcp import MCPTools  # Classe que conecta o agente aos servidores MCP
-from mcp import StdioServerParameters
 import sys
 import os
 
@@ -40,7 +42,12 @@ async def run_agent(message: str) -> None:
         f"npx -y @modelcontextprotocol/server-filesystem {file_path}"  # Usa npx para executar o servidor oficial @modelcontextprotocol/server-filesystem
     ) as mcp_tools:  # O servidor é limitado ao diretório file_path # Não precisa configurar client/server separadamente!
         agent = Agent(
-            model=OpenAIChat(id="gpt-4o", api_key=OPENAI_API_KEY),
+            model=OpenAIChat(
+                api_key=OPENAI_API_KEY,
+                id="gpt-4o-mini",  # gpt-4o ou gpt-4o-mini
+                max_tokens=300,
+                temperature=0.0,
+            ),
             tools=[mcp_tools],
             instructions=dedent(
                 """\
@@ -54,7 +61,6 @@ async def run_agent(message: str) -> None:
             """
             ),
             markdown=True,
-            show_tool_calls=True,
         )
 
         # Executa o agente:
@@ -64,4 +70,4 @@ async def run_agent(message: str) -> None:
 # Exemplo de uso:
 if __name__ == "__main__":
     # Exemplo básico - explorando o licenciamento deste projeto ATUAL --> Agno:
-    asyncio.run(run_agent("Qual é o licenciamento deste projeto?"))
+    asyncio.run(run_agent("Você pode verificar se tenho algum arquivo .txt?"))
