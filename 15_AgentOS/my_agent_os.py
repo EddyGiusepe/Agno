@@ -7,6 +7,9 @@ Script my_agent_os.py
 This script implements a runtime AgentOS using the Agno framework.
 It provides a runtime AgentOS with persistence, telemetry and tracing capabilities.
 The runtime AgentOS is a FastAPI server that orchestrates AI agents.
+
+Run:
+uv run my_agent_os.py
 """
 import os
 import sys
