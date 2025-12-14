@@ -188,3 +188,4 @@ comandos_DB_postgres.md
 tmp/
 agent_sessions.db
 my_agent_os.db
+data/
