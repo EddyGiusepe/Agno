@@ -3,7 +3,12 @@
 Senior Data Scientist.: Dr. Eddy Giusepe Chirinos Isidro
 """
 import os
+from pathlib import Path
+
 from dotenv import load_dotenv, find_dotenv
+
+# Project root directory:
+PROJECT_ROOT = Path(__file__).parent.parent
 
 _ = load_dotenv(find_dotenv())  # read local .env file
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
