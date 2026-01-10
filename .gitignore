@@ -189,3 +189,4 @@ tmp/
 agent_sessions.db
 my_agent_os.db
 data/
+agent_memory.db
