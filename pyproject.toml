@@ -5,6 +5,7 @@ description = "Aqui, usaremos uma biblioteca leve chamada Agno para construir Ag
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "aftership-tracking-sdk==9.0.0",
     "agno==2.3.24",
     "aiohttp==3.13.2",
     "aiosqlite==0.21.0",
